@@ -11,7 +11,6 @@ import markdown
 def index(request):
 
 	if request.method == "POST":
-		print(request.POST)
 
 		if 'q' in request.POST:
 			search = request.POST['q']
@@ -109,7 +108,6 @@ def edit_entry(request, title):
 def random(request):
 
 	all_entries = util.list_entries()
-	print(secrets.choice(all_entries))
 	random_entry = secrets.choice(all_entries)
 
 	messages.add_message(request, messages.SUCCESS, 'Here\'s a random result.')
